@@ -99,19 +99,15 @@ public class main {
 
                 final MessageChannel channel = message.getChannel().block();
 
-
                 InputStream fileAsInputStream = null;
                 try {
-                    fileAsInputStream = new FileInputStream("/home/dam1/IdeaProjects/ImagenGIPHY/src/pocoyo.jpeg");
+                    fileAsInputStream = new FileInputStream("/home/dam1/Escritorio/googleDoc.pdf");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
 
-
                 channel.createMessage(MessageCreateSpec.builder()
-                        .content("Viva pocoyo")
-                        .addFile("/home/dam1/IdeaProjects/ImagenGIPHY/src/pocoyo.jpeg", fileAsInputStream)
-                        .addEmbed(embed)
+                        .addFile("googleDoc.pdf", fileAsInputStream)
                         .build()).subscribe();
             }
         });

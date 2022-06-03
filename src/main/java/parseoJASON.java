@@ -30,6 +30,7 @@ public class parseoJASON {
         for (int i = 0; i < arr.length(); i++) {
             String post_id = arr.getJSONObject(i).getString("project_id");
             String comments = arr.getJSONObject(i).getString("comments");
+            String client_id = arr.getJSONObject(i).getString("client_id");
             System.out.println(post_id);
             System.out.println(comments);
         }
