@@ -15,7 +15,7 @@ public class parseoJASON {
             "                \"project_id\": \"examen3eva\",\n" +
             "                \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",\n" +
             "                \"token_uri\": \"https://oauth2.googleapis.com/token\",\n" +
-            "                \"comments\": [{\"comment\":\"GENIAL\"},{\"comment\":\"ES MUY BUENO\"}],\n" +
+            "                \"comments\": [{\"comment\":\"GENIAL\"},{\"comment\":\"No me gusta este examen\"}],\n" +
             "            },\n" +
 
             "    ]\n" +
