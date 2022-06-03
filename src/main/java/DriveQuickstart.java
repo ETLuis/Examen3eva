@@ -57,7 +57,7 @@ public class DriveQuickstart {
 
         // Filtra para encontrar la carpeta que se llama imagenesBot
         FileList result = service.files().list()
-                .setQ("name contains 'imagenesBot' and mimeType = 'application/vnd.google-apps.folder'")
+                .setQ("name contains 'archivoBot' and mimeType = 'application/vnd.google-apps.folder'")
                 .setPageSize(100)
                 .setSpaces("drive")
                 .setFields("nextPageToken, files(id, name)")
@@ -67,23 +67,23 @@ public class DriveQuickstart {
         if (files == null || files.isEmpty()) {
             System.out.println("No files found.");
         } else {
-            String dirImagenes = null;
+            String dirArchivo = null;
             System.out.println("Files:");
             for (File file : files) {
                 System.out.printf("%s (%s)\n", file.getName(), file.getId());
-                dirImagenes = file.getId();
+                dirArchivo = file.getId();
             }
             // busco la imagen en el directorio
             FileList resultImagenes = service.files().list()
-                    .setQ("name contains 'bbyoda' and parents in '"+dirImagenes+"'")
+                    .setQ("name contains 'bbyoda' and parents in '"+dirArchivo+"'")
                     .setSpaces("drive")
                     .setFields("nextPageToken, files(id, name)")
                     .execute();
             List<File> filesImagenes = resultImagenes.getFiles();
             for (File file : filesImagenes) {
-                System.out.printf("Imagen: %s\n", file.getName());
+                System.out.printf("Archivo: %s\n", file.getName());
                 // guardamos el 'stream' en el fichero aux.jpeg qieune qe existir
-                OutputStream outputStream = new FileOutputStream("/home/dam1/Escritorio/bot.png");
+                OutputStream outputStream = new FileOutputStream("/home/dam1/Escritorio/googleDoc.pdf");
                 service.files().get(file.getId())
                         .executeMediaAndDownloadTo(outputStream);
                 outputStream.flush();
