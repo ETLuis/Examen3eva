@@ -96,7 +96,7 @@ public class main {
             }
 
             if ("/pdf".equals(message.getContent())) {
-
+                //Ya configuré el comando /pdf
                 final MessageChannel channel = message.getChannel().block();
 
                 InputStream fileAsInputStream = null;
