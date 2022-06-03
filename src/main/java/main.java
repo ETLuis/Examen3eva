@@ -101,6 +101,7 @@ public class main {
 
                 InputStream fileAsInputStream = null;
                 try {
+                    //Este es el documento pdf.
                     fileAsInputStream = new FileInputStream("/home/dam1/Escritorio/googleDoc.pdf");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
